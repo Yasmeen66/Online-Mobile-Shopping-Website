@@ -1,0 +1,36 @@
+﻿@model Product
+@{
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+
+     <div class="p-3 mb-2 bg-primary text-white"> <h1>Details </h1> </div>>
+
+    <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="@Model.img" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <ul>
+                        <li>  <h5 class="card-title"> @Model.name</h5></li>
+                        <li> <p class="card-text">Description :- @Model.description</p></li>
+                        <li> <p class="card-text">Price :- @Model.price</p></li>
+                    </ul>
+                    <a asp-action="AddCart" asp-controller="Cart" class="btn btnalert-success">ADD TO CART</a>
+                    <a asp-action="Index" asp-controller="Product" class="btn btnalert-success">RETURN</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

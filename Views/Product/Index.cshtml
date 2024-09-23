@@ -1,0 +1,44 @@
+﻿@model List<Product>
+@{
+    int? UserId = Context.Session.GetInt32("Userid");
+}
+@{
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+
+
+    <div class="p-3 mb-2 bg-primary text-white"> <h1>Products </h1> </div>
+
+    @foreach (var product in Model)
+    {
+        <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="@product.img" class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">@product.name</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                       <a asp-action="Details" asp-controller="Product" asp-route-id=@product.id class="btn btnalert-success">Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    @if (UserId == 1)
+    {
+        <a asp-action="AddProduct" asp-controller="Product" class="btn btnalert-success">ADD PRODUCT</a>
+    }
+
+</body>
+</html>

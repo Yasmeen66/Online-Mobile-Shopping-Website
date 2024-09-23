@@ -1,0 +1,93 @@
+﻿@model User
+@{
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Register</title>
+</head>
+<body>
+    <div class="p-3 mb-2 bg-primary text-white"> <h1>Register </h1> </div>
+
+    <form asp-action="Register" asp-controller="User" method="post" class="row g-3">
+        <div class="col-md-6">
+            <span asp-validation-for="name" class="text-danger"></span>
+            <label asp-for="name" class="form-label">Name</label>
+            <input asp-for="name" type="text" class="form-control" id="name">
+        </div>
+        <div class="col-md-6">
+            <span asp-validation-for="email" class="text-danger"></span>
+            <label asp-for="email" class="form-label">Email</label>
+            <input asp-for="email" type="email" class="form-control" id="email">
+        </div>
+        <div class="col-6">
+            <span asp-validation-for="age" class="text-danger"></span>
+            <label asp-for="age" class="form-label">Age</label>
+            <input asp-for="age" text" class="form-control" id="age">
+        </div>
+        <div class="col-6">
+            @*     <span asp-validation-for="phonenumber" class="text-danger"></span>*@
+            <label asp-for="phonenumber" class="form-label">Phone Number</label>
+            <input asp-for="phonenumber" type="text" class="form-control" id="phonenumber">
+        </div>
+
+
+        <div class="col-md-6">
+            <span class="text-danger"></span>
+            <label asp-for="country" for="inputCity" class="form-label">Country</label>
+            <select asp-for="country" id="country" class="form-select">
+                <option selected>Choose...</option>
+                <option>Egypt</option>
+                <option>Greece</option>
+                <option> Russia </option>
+                <option>Italy</option>
+                <option>Brazil</option>
+                <option>Japan</option>
+                <option>Australia</option>
+                <option>China</option>
+            </select>
+        </div>
+        <div class="col-md-6">
+            <span class="text-danger"></span>
+            <label asp-for="gender" for="inputCity" class="form-label">Gender</label>
+            <select asp-for="gender" id="gender" class="form-select">
+                <option selected>Choose...</option>
+                <option>Female</option>
+                <option>Male</option>
+            </select>
+        </div>
+        <div class="col-md-6">
+            <span asp-validation-for="password" class="text-danger"></span>
+            <label asp-for="password" class="form-label">Password</label>
+            <input asp-for="password" type="password" class="form-control" id="password">
+        </div>
+        <div class="col-md-6">
+            <span asp-validation-for="confirmpassword" class="text-danger"></span>
+            <label asp-for="confirmpassword" class="form-label">Confirm Password</label>
+            <input asp-for="confirmpassword" type="password" class="form-control" id="confirmpassword">
+        </div>
+        <div class="col-12">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck">
+                <label class="form-check-label" for="gridCheck">
+                    Check me out
+                </label>
+            </div>
+        </div>
+        <div class="col-12">
+            <input type="submit" value="Register" />
+        </div>
+
+    </form>
+    @section Scripts{
+        <script src="/lib//jquery/dist/jquery.min.js"></script>
+        <script src="/lib/jquery-validation/dist/jquery.validate.js"></script>
+        <script src="/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+    }
+
+</body>
+</html>

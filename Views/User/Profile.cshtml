@@ -1,0 +1,32 @@
+﻿@model User
+@{
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title class="p-3 mb-2 bg-primary text-white">Profile</title>
+</head>
+<body>
+    
+    <div class="card" style="width: 18rem;">
+        <img src="https://st4.depositphotos.com/17828278/25732/v/450/depositphotos_257322782-stock-illustration-man-icon-profile-member-user.jpg" class="card-img-top">
+        <div class="card-body">
+            <h5 class="p-3 mb-2 bg-primary text-white">My Account</h5>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">@Model.name</li>
+            <li class="list-group-item">@Model.email</li>
+            <li class="list-group-item">@Model.phonenumber</li>
+            <li class="list-group-item">@Model.country</li>
+        </ul>
+    </div>
+
+
+
+
+</body>
+</html>
